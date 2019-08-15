@@ -21,4 +21,5 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .and()
                 .httpBasic();
     }
+
 }
