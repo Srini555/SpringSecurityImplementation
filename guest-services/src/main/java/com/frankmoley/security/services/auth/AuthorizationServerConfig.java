@@ -24,7 +24,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("guest-app")
-                .scopes("READ_ALL_GUESTS","WRITE_GUESTS","UPDATE_GUSSTS")
+                .scopes("READ_ALL_GUESTS","WRITE_GUESTS","UPDATE_GUESTS")
                 .secret("secret")
                 .autoApprove(true)
                 .authorities("ROLE_GUESTS_AUTHORIZED_CLIENT")

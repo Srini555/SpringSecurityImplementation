@@ -2,6 +2,7 @@ package com.frankmoley.security.app.service;
 
 import com.frankmoley.security.app.domain.Guest;
 import com.frankmoley.security.app.domain.GuestModel;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -24,7 +25,11 @@ public class GuestService {
     @Value("${landon.guest.service.url}")
     private String guestServiceUrl;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
+
+    public GuestService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public List<Guest> getAllGuests(){
         String url = guestServiceUrl + GUESTS;
